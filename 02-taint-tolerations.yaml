@@ -9,14 +9,16 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always
+  # for taint  
   nodeSelector:
     disktype: ssd
-  # tolerations:
-  # - key: "key1"
-  #   operator: "Equal"
-  #   value: "value1"
-  #   effect: "NoExecute"
-  # - key: "key1"
-  #   operator: "Equal"
-  #   value: "value1"
-  #   effect: "NoSchedule"
+  # tolerations  
+  tolerations:
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoExecute"
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"
